@@ -17,7 +17,7 @@ The structure of the repository and a brief description about various branches i
     - [environments](https://github.com/ris04hit/cop290_assignment2/tree/master/backend/environments)
         - [static](https://github.com/ris04hit/cop290_assignment2/tree/master/backend/environments/static) folder
             - [css](https://github.com/ris04hit/cop290_assignment2/tree/master/backend/environments/static/css) folder contains css files used in frontend.
-            - [data](https://github.cohttps://github.com/ris04hit/cop290_assignment2/tree/master/backend/environments/static/datam/ris04hit/cop290_assignment2/tree/master/backend/environments/static/data) folder contains jpeg, mkv, png files used in frontend.
+            - [data](https://github.com/ris04hit/cop290_assignment2/tree/master/backend/environments/static/data) folder contains jpeg, mkv, png files used in frontend.
         - [templates](https://github.com/ris04hit/cop290_assignment2/tree/master/backend/environments/templates)
             - [html](https://github.com/ris04hit/cop290_assignment2/tree/master/backend/environments/templates/html) folder contains html files used in frontend.
             - [js](https://github.com/ris04hit/cop290_assignment2/tree/master/backend/environments/templates/js) folder contains javascript files used in frontend.
