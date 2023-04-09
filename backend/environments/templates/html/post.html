@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+    <head>
+        <title>post</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/post.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="{{url_for('header_js',user=user)}}"></script>
+        <script src="{{url_for('post_js')}}"></script>
+        <script src="{{url_for('main_js')}}" defer></script>
+    </head>
+    <body  id="body_post">
+        <div id="mul_tag_post">
+            <div class="inner_post" id="rect_tag_post">
+                <div class="text3" id="text_tag_post">
+                    Tags
+                </div>
+                <a href="{{url_for('tag')}}">
+                    <button class="button5" id="button_post1">
+                        Chess Openings
+                    </button>
+                </a>
+                <a href="{{url_for('tag')}}">
+                    <button class="button5" id="button_post2">
+                        London System
+                    </button>
+                </a>
+                <a href="{{url_for('tag')}}">
+                    <button class="button5" id="button_post3">
+                        Sicilian defence
+                    </button>
+                </a>
+                <a href="{{url_for('tag')}}">
+                    <button class="button5" id="button_post4">
+                        Caro Kann defence
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div id="post">
+            <rect class="inner_post" id="inner_post_post"></rect>
+
+            <rect class="profile_bar" id="pbar_post"></rect>
+            <div class="text7" id="text_post1">
+                Posted 6hrs ago
+            </div>
+            <rect id="rect_post1"></rect>
+            <a href="{{url_for('profile')}}"> 
+                <div class="text4" id="text_post2">
+                    Mechan
+                </div>
+            </a>
+            <div id="text_post3">
+                Follow
+            </div>
+            <rect id="rect_profile_post"></rect>
+
+            <div id="title_post" class="text1">
+                How to open in chess as white ?
+            </div>
+
+            <video controls id="video_post">
+                <source src="{{url_for('static',filename='data/Chess Game.mp4')}}" type="video/mp4">
+            </video>
+            <div id="text_post4" class="text4">
+                There are many openings for white in chess, namely the London System, French system,
+                Sicilian Najdorf, etc. For beginners, the most popular opening is the London system
+                because it is easy to remember and the variations are fairly simple. 
+            </div>
+            <img src="{{url_for('static',filename='data/ch.gif')}}" id="gif_post">
+            <div id="text_post5" class="text4">
+                There are many openings for white in chess, namely the London System, French system,
+                Sicilian Najdorf, etc. For beginners, the most popular opening is the London system
+                because it is easy to remember and the variations are fairly simple. 
+            </div>
+
+            <rect id="footer_post"></rect>
+            <div class="triangle-up" id="del_post"></div>
+            <div class="text9" id="text_post6">
+                193
+            </div>
+            <img src="{{url_for('static',filename='data/comment.png')}}" id="image_post">
+            <div class="text9" id="text_post7">
+                Comment
+            </div> 
+            <button class="button5" id="button_book_post">
+                Bookmark
+            </button>
+            <rect id="rect_post2"></rect>
+            <div class="text9" id="text_post8">
+                Report
+            </div>
+        </div>
+
+        <div id="comment_section_post">
+            <div class="inner_post" id="rect_comment_post"></div>
+            <rect id="line_comment_post"></rect>
+            <form>
+                <input type="text" class="form3" id="add_comment_post" placeholder="Add Comment">
+            </form>
+            <button class="button1" id="button_post5">
+                Add
+            </button>
+
+            <div id="mul_comment_post">
+                <div class="comment" id="comment_post1">
+                    <a href="{{url_for('profile')}}" class="text1">
+                        <rect class="pfp_comment"></rect> 
+                        <div class="name_comment">
+                            Excitedleopard
+                        </div>
+                    </a>
+                    <div class="text10" id="comment_time_post1">
+                        6hrs ago
+                    </div>
+                    <div class="name_comment" id="comment_content_post1">
+                        Blah Blah Blah Blah
+                    </div>
+                    <button class="button6" id="button_comment_post1">
+                        <div class="triangle-up2" id="triangle_post"></div>
+                        <div class="upvote_comment">
+                            34
+                        </div>
+                    </button>
+                    <button class="button6" id="button_comment_post2">
+                        Reply
+                    </button>
+                    <button class="button6" id="button_comment_post3">
+                        Report
+                    </button>
+
+                    <rect id="nest_comment_post1"></rect>
+
+                    <div class="comment" id="comment_post2">
+                        <a href="{{url_for('profile')}}" class="text1">
+                            <rect class="pfp_comment"></rect> 
+                            <div class="name_comment">
+                                Excitedleopard
+                            </div>
+                        </a>
+                        <div class="text10" id="comment_time_post1">
+                            6hrs ago
+                        </div>
+                        <div class="name_comment" id="comment_content_post1">
+                            Blah Blah Blah Blah
+                        </div>
+                        <button class="button6" id="button_comment_post1">
+                            <div class="triangle-up2" id="triangle_post"></div>
+                            <div class="upvote_comment">
+                                34
+                            </div>
+                        </button>
+                        <button class="button6" id="button_comment_post2">
+                            Reply
+                        </button>
+                        <button class="button6" id="button_comment_post3">
+                            Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

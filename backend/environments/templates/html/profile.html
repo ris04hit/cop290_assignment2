@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+    <head>
+        <title>profile</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/profile.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="{{url_for('header_js',user=user)}}"></script>
+        <script src="{{url_for('profile_js')}}"></script>
+        <script src="{{url_for('main_js')}}" defer></script>
+    </head>
+    <body  id="body_profile">
+        <header-component></header-component>
+        <div id="profile">
+            <rect id="pfp_profile"></rect>
+            <div id="name_profile">
+                Mechan
+            </div>
+            <div id="follow_profile">
+                Follow
+            </div>
+        </div>
+
+        <div id="info_profile">
+            <div class="text7" id="member_profile">
+                members since - <div class="text_profile">2/23</div>
+            </div>
+            <div class="text7" id="last_profile">
+                Last visited - <div class="text_profile">2 hr ago</div>
+            </div>
+            <div class="text7" id="upvote_profile">
+                Upvotes - <div class="text_profile">2k+</div>
+            </div>
+            <div class="text7" id="email_profile">
+                email address - 
+                <a href="mailt:xyz@gmail.com">
+                    <div class="text_profile">
+                        xyz@gmail.com
+                    </div>
+                </a>
+            </div>
+            <div class="text7" id="org_profile">
+                Organisation - 
+                <a href="{{url_for('institute')}}">
+                    <div class="text_profile">
+                        IIT-Delhi
+                    </div>
+                </a>
+            </div>
+            <div class="text7" id="web_profile">
+                website - 
+                <a href="https://www.meechan.com">
+                    <div class="text_profile">
+                        www.meechan.com
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="option_profile">
+            <rect id="rect_profile1"></rect>
+            <rect class="rect_option_profile" id="rect_option_profile1"></rect>
+            <div class="text8" id="history_profile">
+                History
+            </div>
+            <rect class="rect_option_profile" id="rect_option_profile2"></rect>
+            <div class="text8" id="setting_profile">
+                Settings
+            </div>
+            <rect class="rect_option_profile" id="rect_option_profile3"></rect>
+            <div class="text8" id="bookmark_profile">
+                Bookmarks
+            </div>
+            <rect class="rect_option_profile" id="rect_option_profile4"></rect>
+            <div class="text8" id="insti_profile">
+                Institutions
+            </div>
+            <rect class="rect_option_profile" id="rect_option_profile5"></rect>
+            <div class="text8" id="following_profile">
+                Following
+            </div>
+            <rect class="rect_option_profile" id="rect_option_profile6"></rect>
+            <div class="text8" id="follower_profile">
+                Followers
+            </div>
+        </div>
+
+        <div id="interests">
+            <div class="multiple_post" id="interest_rect_profile">
+                <div class="text4" id="interest_text_profile">
+                    Interests
+                </div>
+                <a href="{{url_for('tag')}}">
+                    <button class="button4" id="button_profile1">Chemistry</button>
+                </a>
+                <a href="{{url_for('tag')}}">
+                    <button class="button4" id="button_profile2">Physics</button>
+                </a>
+                <a href="{{url_for('tag')}}">
+                    <button class="button4" id="button_profile3">Linux</button>
+                </a>
+                <a href="{{url_for('tag')}}">
+                    <button class="button4" id="button_profile4">Chess</button>
+                </a>
+                <a href="{{url_for('tag')}}">
+                    <button class="button4" id="button_profile5">Stock Market</button>
+                </a>
+                <a href="{{url_for('tag')}}">
+                    <button class="button4" id="button_profile6">Computer Science</button>
+                </a>
+                <a href="{{url_for('tag')}}">
+                    <button class="button4" id="button_profile7">Cosmology</button>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

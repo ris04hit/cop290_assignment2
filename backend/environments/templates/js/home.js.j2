@@ -1,0 +1,188 @@
+var tag_list = ["tag1", "tag2","tag3","tag4"];
+
+// tag pop up
+function tag_click() {
+    $("#tag_pop_home").show();
+    var rect_ht = 56 + 52*tag_list.length;
+    $("#rect_tag_home").css("height",rect_ht.toString().concat("px"));
+    var html = "";
+    var top = 4;
+    for (var count=0; count< tag_list.length; count++){
+        top = top + 52;
+        var code = `<img src="../../data/comment.png" style="top: ${top+9}px" class="cross_tag_home" id="button_tag_home-${count}">`
+        var code = code.concat("<a href='tag.html'>\n\t<button class='buttons_tag_home' style='top:").concat(top);
+        code = code.concat("px'>");
+        code = code.concat(tag_list[count]);
+        code = code.concat("</button>\n</a>\n");
+        html = html.concat(code);
+    }
+    $("#button_tag_home").html(html);
+    var jsc = `<script>    // remove tag on clicking cross
+    $(".cross_tag_home").click(function(){
+        var par = $(this).attr('id');
+        var index = Number(par.slice(par.indexOf('-') + 1));
+        var spliced = tag_list.splice(index,1);
+        tag_click();
+    })</script>`
+    $("#button_tag_home").append(jsc);
+}
+
+function upvote(post_id) {
+    var up_id = "#".concat(post_id).concat(" .upvote");
+    var upv = $(up_id).text();
+    var upv_int = parseInt(upv);
+    // if check already not upvoted then
+    upv_int = upv_int + 1;
+    $(up_id).html("".concat(upv_int));
+}
+
+// display feed
+function feed_display() {
+    var child = $("#mul_post_home1").children();
+    var top = 107;
+    var total_height = 5;
+    var index = 2;
+    //for (let index = 3; index < child.length; index++) {
+    {% for post_info in feed %}
+        {% set ct = loop.index-1 %}
+        index = index + 1;
+        var element = child[index];
+        var div = $(element).find('.text_home4')[0];
+        $(div).html('{{feed[ct][6]}}');
+        var div_cov = $(div).parent();
+        var div2 = $(element).find('.text_home3')[0];
+        $(div2).html('{{feed[ct][5]}}');
+        $(div_cov).css('top',"".concat(parseInt($(div2).height())+101).concat("px"));
+        height = Math.min(parseInt($(div).height()) + parseInt($(div2).height()) + 189, 800);
+        height_content = height - parseInt($(div2).height()) - 189;
+        $(element).css('height', "".concat(height).concat("px"));
+        $(element).css('top', "".concat(top).concat("px"));
+        $(div_cov).css('height', "".concat(height_content).concat("px"));
+        var inner_rect = $(element).find('.inner_post_home')[0];
+        $(inner_rect).css('height',"".concat(height-28).concat("px"));
+        var follow_div = $(element).find('.follow')[0];
+        if ({{feed[ct][8]}}){
+            $(follow_div).html("Unfollow");
+        }
+        else{
+            $(follow_div).html("Follow");
+        }
+        top += height;        
+    {% endfor %}
+    //}
+    total_height = Math.min(1800, total_height + top + 14);
+    $("#mul_post_home1").css('height',"".concat(total_height).concat("px"));
+
+}
+
+{# $(window).on('load', function(){
+    feed_display();
+})
+
+$(window).on('pageshow', function(){
+    feed_display();
+    console.log("back");
+}) #}
+
+$(document).ready(function(){
+
+    feed_display();
+
+    $("#button_home2").click(function(){
+        tag_click();
+    })
+
+    $(".close_pop").click(function(){
+        $("#tag_pop_home").hide(1000);
+    })
+
+    // hover tag
+    $("#button_home2").hover(function(){
+        $("#text_home5").css("color","rgba(250, 0, 255, 0.809443)");
+    }, function(){
+        $("#text_home5").css("color","#FFFFFF");
+    })
+
+    // hover sort
+    $("#button_home3").hover(function(){
+        $("#text_home6").css("color","rgba(250, 0, 255, 0.809443)");
+    }, function(){
+        $("#text_home6").css("color","#FFFFFF");
+    })
+
+    // sort click
+    $("#button_home3").click(function(){
+        $("#sort_pop_home").toggle();
+    })
+    
+    // hover by time
+    $("#button_sort_home1").hover(function(){
+        $("#text_sort_home1").css("color","#6DD6CF");
+    }, function(){
+        $("#text_sort_home1").css("color","#FFFFFF");
+    })
+
+    //hover by upvote
+    $("#button_sort_home2").hover(function(){
+        $("#text_sort_home2").css("color","#6DD6CF");
+    }, function(){
+        $("#text_sort_home2").css("color","#FFFFFF");
+    })
+
+    //click by time
+    $("#button_sort_home1").click(function(){
+        $("#rect_time_home").show();
+        $("#rect_up_home").hide();
+        $("#sort_pop_home").hide();
+        window.location.href = "{{url_for('home_sort',username=session['user']['username'],sort='time')}}"
+    })
+
+    //click by upvote
+    $("#button_sort_home2").click(function(){
+        $("#rect_up_home").show();
+        $("#rect_time_home").hide();
+        $("#sort_pop_home").hide();
+        window.location.href = "{{url_for('home_sort',username=session['user']['username'],sort='upvotes')}}"
+    })
+
+    //hover profile
+    $(".post_author").hover(function(){
+        $(".post_author .text1").css("color","#03001C");
+    }, function(){
+        $(".post_author .text1").css("color","#FFFFFF");
+    })
+    
+    //hover follow
+    $(".follow").hover(function(){
+        $(".follow").css("color","#00FFFF");
+    }, function(){
+        $(".follow").css("color","#008DFF");
+    })
+    
+    //click upvote triangle
+    $(".triangle-up").click(function(){
+        var par = $(this).parent().attr('id');
+        upvote(par);
+    })
+    
+    // remove tag on clicking cross
+    $("#button_tag_home-0").click(function(){
+        $("#button_tag_home-0").hide();
+        // console.log("A");
+        // var par = $(this).parent().attr('id');
+        // var index = Number(par.slice(par.indexOf('-') + 1));
+        // var spliced = tag_list.splice(index,1);
+        // tag_click();
+    })
+
+    $(".follow").click(function(){
+        var cont = $(this).text();
+        if (cont == "Follow"){
+            $(this).html("Unfollow");
+        }    
+        else{
+            $(this).html("Follow");
+        }
+    })
+
+})

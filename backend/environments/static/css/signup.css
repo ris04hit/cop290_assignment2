@@ -1,0 +1,241 @@
+#body_signup {
+    height: 1100px;
+}
+
+.text-js{
+    opacity: 0;
+}
+
+.cursor{
+display: block;
+position: absolute;
+height: 100%;
+top: 0;
+right: -5px;
+width: 2px;
+/* Change colour of Cursor Here */
+background-color: white;
+z-index: 1;
+animation: flash 0.5s none infinite alternate;
+}
+
+@keyframes flash{
+0%{
+    opacity: 1;
+}
+100%{
+    opacity: 0;
+}
+  }
+  
+
+#text_signup1 {
+    position: absolute;
+    width: 370px;
+    height: 128px;
+    left: 59px;
+    top: 116px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 64px;
+    
+    color: #FFFFFF;
+}
+
+#text_signup2 {
+    position: absolute;
+    width: 407px;
+    height: 376px;
+    left: 528px;
+    top: 271px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 61px;
+    
+    color: #FFC0FB;
+}
+
+#text_signup3 {
+    position: absolute;
+    width: 232px;
+    height: 38px;
+    left: 59px;
+    top: 676px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 38px;
+    
+    color: #FFFFFF;
+}
+
+#rect_profile_signup {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 1019px;
+    top: 181px;
+    border-radius: 150px;
+    
+    background: #03001C;
+    border: 3px solid #B6EADA;
+}
+
+#text_profile_signup {
+    position: absolute;
+    width: 83px;
+    height: 50px;
+    left: 1127px;
+    top: 306px;
+    cursor: pointer;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
+#send_otp_signup {
+    width: 110px;
+    height: 50px;
+    left: 319px;
+    top: 429px;
+    
+    border-radius: 20px;
+}
+
+#text_otp_signup {
+    width: 72px;
+    height: 25px;
+    left: 19px;
+    top: 12px;
+
+    font-size: 20px;
+    line-height: 25px;
+}
+
+#create_account_signup {
+    width: 240px;
+    height: 50px;
+    left: 600px;
+    top: 943px;
+
+    border-radius: 20px;
+}
+
+#account_signup {
+    width: 176px;
+    height: 38px;
+    left: 32px;
+    top: 6px;
+
+    font-size: 30px;
+    line-height: 38px;
+}
+
+#username_signup {
+    width: 370px;
+    height: 50px;
+    left: 59px;
+    top: 281px;
+}
+
+#email_signup{
+    width: 370px;
+    height: 50px;
+    left: 59px;
+    top: 355px;
+}
+
+#otp_signup{
+    width: 169px;
+    height: 50px;
+    left: 59px;
+    top: 429px;
+}
+
+#password_signup{
+    width: 260px;
+    height: 50px;
+    left: 59px;
+    top: 503px;
+}
+
+#confirm_signup{
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    left: 59px;
+    top: 577px;
+    
+}
+
+#country_signup{
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    left: 59px;
+    top: 726px;    
+}
+
+#state_signup{
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    left: 367px;
+    top: 723px;
+}
+
+#city_signup{
+    width: 260px;
+    height: 50px;
+    left: 675px;
+    top: 720px;
+}
+
+#web_signup{
+    width: 260px;
+    height: 50px;
+    left: 59px;
+    top: 800px;
+}
+
+#git_signup{
+    width: 260px;
+    height: 50px;
+    left: 367px;
+    top: 800px;
+}
+
+#name_signup {
+    width: 260px;
+    height: 50px;
+    left: 675px;
+    top: 800px;   
+}
+
+#org_signup{
+    width: 260px;
+    height: 50px;
+    left: 59px;
+    top: 874px;
+}
+
+#message_signup1 {
+    left: 60px;
+    top: 240px;
+}

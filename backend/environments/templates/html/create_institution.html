@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <head>
+        <title>Create Institution</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/create_institution.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="{{url_for('create_institution_js')}}"></script>
+        <script src="{{url_for('header_js',user=user)}}"></script>
+        <script src="{{url_for('main_js')}}" defer></script>
+    </head>
+    <body id="body_inst">
+        <header-component></header-component>
+        <div id = "text_inst1">
+            Become admin of Institute, create now.
+        </div><br>
+
+        <div class="pop_up" id="pop_inst1">
+            <div class="type-js headline">
+                <div id = "text_inst2" class="pop_inst1">
+                    What to do 
+                    in particular 
+                    slot then press Enter
+                    The upper thing will 
+                    be controlled by 
+                    Java
+                </div>
+            </div>
+        </div><br>
+        <div class="pop_up" id="pop_inst2">
+            <div class="type-js headline">
+                <div id = "text_inst2" class="pop_inst2">
+                    What to do yohoooo
+                    in particular 
+                    slot then press Enter
+                    The upper thing will 
+                    be controlled by 
+                    Java
+                </div>
+            </div>
+        </div><br>
+        
+        <div id = "text_inst3">
+            Optional information
+        </div><br>
+                
+        <img id = "rect_profile_inst" src=""></img>
+        <label id = "text_profile_inst">
+            <form><input type="file" onchange="previewFile()" accept="image/png, image/jpeg, image/jpg">
+                Add Profile Photo
+            </form>
+        </label><br>
+        
+        <button class="button1" id="send_otp_inst" >
+            <div class="text1" id="text_otp_inst">
+                Send OTP
+            </div><br>
+        </button>
+        
+        <button class="button1" id="create_institution_inst">
+            <div class="text1" id="institution_inst">
+                Create Institute
+            </div>
+        </button>
+
+        <form id="form_inst1">
+            <input type="text" id="username_inst" placeholder="Institute Name" class="form1"><br>
+            <input type="text" id="email_inst" placeholder="Email Adress" class="form1"><br>
+            <input type="text" id="otp_inst" placeholder="OTP" class="form1"><br>
+            <input type="text" id="passcode_inst" placeholder="Passcode" class="form1"><br>
+            <input type="text" id="country_inst" placeholder="Country" class="form1"><br>
+            <input type="text" id="state_inst" placeholder="State" class="form1"><br>
+            <input type="text" id="city_inst" placeholder="City" class="form1"><br>
+            <input type="text" id="web_inst" placeholder="Website Address" class="form1"><br>
+        </form>
+        <textarea id="desc_inst" class="form1" form="form_inst1" placeholder="Description"></textarea>
+        
+    </body>
+</html>

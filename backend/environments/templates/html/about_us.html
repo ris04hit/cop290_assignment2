@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <head>
+        <title>About Us</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/about_us.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="{{url_for('header_js',user=user)}}"></script>
+        <script src="{{url_for('main_js')}}" defer></script>
+    </head>
+    <body id="body_about">
+        <header-component></header-component>
+        <div id="text_about1">
+            About Us
+        </div><br>
+
+        <div id="text_about2">
+            Vision<br>
+            A collaborative space for people who want to share their knowledge and resources. Whether need to share in an organization or publically to all or only to friends, Synergy is here. Anybody with need of getting some resources, just search it and surely somebody will be there who has posted the related content for you.<br>
+            <br>
+            <br>
+            Idea behind the Synergy...<br>
+            Often, individuals and organizations who wish to share their resources struggle to find an organized platform to do so. To facilitate this sharing of information, a collaborative space is necessary, where diverse parties can come together and contribute. Unfortunately, searching for resources on the internet can be challenging due to the presence of misleading or irrelevant information.<br>
+            <br>
+            <br>
+            What we do ?<br>
+            For those who want to contribute their expertise but can't figure out how to do it, as well as for those looking for resources and information from competent people, we offer a special and helpful environment which is also the first of its kind.<br>
+            <br>
+            <br>
+        </div>
+
+        <rect id="footer_about"></rect>
+
+        <div id="text_about3">
+            Contact Us
+        </div><br>
+
+        <rect id="line_about1"></rect>
+        <rect id="line_about2"></rect>
+
+        <div id="text_about4">
+            Address
+        </div>
+        <div id="text_about5">
+            HPW6+85X,
+            New Ashok Vihar, 
+            New Bhupalpura, Khara Kuan,
+            Udaipur, Rajasthan 
+            PIN-313001
+        </div>
+        
+        <div id="text_about6">
+            Telephone No.
+        </div>
+        <div id="text_about7">
+            011 2658 1842
+        </div>
+        <div id="text_about8">
+            email address
+        </div>
+        <a href="mailto:excitedleo@gmail.com">
+            <div id="text_about9">
+                excitedleo@gmail.com
+            </div>
+        </a>
+
+        <div id="text_about10">
+            Follow us on
+        </div>
+        <a href="https://twitter.com">
+            <div id="text_about11">
+                Twitter
+            </div>
+            <img src="{{url_for('static',filename='/data/twit.jpg')}}" id="twit_about">
+        </a>
+        <a href="https://instagram.com">
+            <div id="text_about12">
+                Instagram
+            </div>
+            <img src="{{url_for('static',filename='/data/insta.jpg')}}" id="insta_about">
+        </a>
+        <a href="https://reddit.com">
+            <div id="text_about13">
+                Reddit
+            </div>
+            <img src="{{url_for('static',filename='/data/reddit-logo-2436.jpg')}}" id="reddit_about">
+        </a>
+        <a href="https://github.com">
+            <div id="text_about14">
+                Github
+            </div>
+            <img src="{{url_for('static',filename='/data/git.png')}}" id="git_about">
+        </a>
+    </body>
+</html>

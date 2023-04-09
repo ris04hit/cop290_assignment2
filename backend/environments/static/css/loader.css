@@ -1,0 +1,33 @@
+#body_loader {
+    height: 1024px;
+}
+
+#logo_loader {
+    position: absolute;
+    width: 357px;
+    height: 97px;
+    left: 541px;
+    top: 140px;    
+}
+
+#outer_rect_loader {
+    position: absolute;
+    width: 523px;
+    height: 38px;
+    left: 459px;
+    top: 489px;
+    
+    background: #FFFFFF;
+    border-radius: 50px;
+}
+
+#inner_rect_loader {
+    position: absolute;
+    width: 103px;
+    height: 38px;
+    left: 459px;
+    top: 489px;
+    
+    background: #B6EADA;
+    border-radius: 50px;
+}

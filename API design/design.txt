@@ -1,0 +1,309 @@
+Institution not complete on figma
+Tex_file left
+
+Classes:
+    Post:
+        Id: Id.Post_id
+        Author: Id.Account_id
+        Time: date_time
+        Title: alphanumeric
+        Content: Tex_file
+        Upvotes: {Id.Account_id}*
+        Comment: {Id.Comment_id}*
+        Report_list: {Id.Report_id}*
+        Public_post: Bool
+        Visibility: Bool {if Author.Visibility = True} else False
+        Institutes: {Id.Institution_id}*  (#While drafting empty institutes)
+        tag_list: {Id.Tag_id}*
+        API_visibility: Bool
+            {   Visibility = True
+                ((Public_post = True) or (If the user of API has one of the institute's Passcode)) && (len(Institutes)!=0)
+            }
+    Account:
+        Id: Id.Account_id
+        Username: Alphanumeric
+        Creation_time: date_time
+        Name: alphabets
+        Email_id: email
+        Institutes: {Id.Institution_id}*
+        Posts: {Id.Post_id}*
+        Last_visit: date_time
+        Upvotes: int
+        Profile_photo: Tex_file (#Store and provide link in databse)
+        Bookmarks: {Id.Post_id}*
+        Followers: {Id.Account_id}*
+        Following: {Id.Account_id}*
+        Comments: {Id.Comment_id}* 
+        Visited_Post: {Id.Post_id}*
+        Activity: {Id.Comment_id|Id.Post_id}*
+        tag_list: {Id.Tag_id}*
+        Country: alphanumeric
+        State: alphanumeric
+        City: alphanumeric
+        Website_address: alphanumeric
+        Github_handle: alphanumeric
+        Organisation: alphanumeric
+        Visibility: Bool
+        Report_list: {Id.Report_id}*
+        API_visibility: Bool
+            {   Visibility = True
+            }
+    Institution:
+        Id: Id.Institution_id
+        Name: Alphanumeric
+        Members: {Id.Account_id}*
+        Creation_time: date_time
+        Posts: {Id.Post_id}*
+        Description: Tex_file
+        Domains: {alphanumeric}*    (#Email Domains)
+        Admin: Id.Account_id
+        Email_id: email         (#For Contact, By default Admin.email)
+        Visibility: Bool
+        API_visibility: Bool
+            {   Visibility = True
+            }
+    Tag:
+        Id: Id.Tag_id
+        Tag_Name: alphanumeric
+        Posts: {Id.Post_id}*
+        Members: {Id.Account_id}*
+        API_visibility: Bool
+            {True}
+    Comment:
+        Id: Id.Comment_id
+        Author: Id.Account_id 
+        Time: date_time
+        Content: Tex_file
+        Upvotes: {Id.Account_id}*
+        Comment_list: {Id.Comment_id}*
+        Comment_Report: {Id.Report_id}*
+        Visibility: Bool {if Author.Visibility = True} else False; check post Visibility, and its author Visibility
+        Post: Id.Post_id
+        API_visibility: Bool
+    Tex_file:
+        To be concluded
+    Report:
+        Id: Id.Report_id
+        From: Id.Account_id
+        To: Id.Account_id | Id.Post_id | Id.Comment_id
+        Description: Tex_file
+        API_visibility: False
+    email:
+        Username: alphanumeric
+        Domain: alphanumeric
+        Domain_hash: hex
+        Visibility: Bool        (#By default False)
+        API_visibility: Bool
+            {Visibility = True}
+    Id:
+        obj: alphanumeric
+        uniq: alphanumeric
+        
+        SubClasses:
+            Post_id:
+                obj = P
+            Account_id:
+                obj = A
+            Institution_id:
+                obj = I
+            Tag_id:
+                obj = T
+            Comment_id:
+                obj = C
+            Report_id:
+                obj = R
+    Acc_personal:
+        Id: Id.Account_id
+        Password: alphanumeric
+    Institute_personal:
+        Id: Id.Institution_id
+        Passcode: alphanumeric
+
+API:
+    Return Objects:
+        Post:
+            Id: Id.Post_id
+            Author: Id.Account_id
+            Time: date_time
+            Title: alphanumeric
+            Content: Tex_file
+                                                                                            Upvotes: {Id.Account_id}*
+            Comment: {Id.Comment_id}*
+                                                                                            Report_list: {Id.Report_id}*
+            Public_post: Bool
+                                                                                            Visibility: Bool
+            Institutes: {Id.Institution_id}*  (#While drafting empty institutes)
+            tag_list: {Id.Tag_id}*
+                                                                                            API_visibility: Bool
+            Customized:
+                Report_num = len(Report_list)
+                Upvote_num = len(Upvotes)
+        Account:
+            Id: Id.Account_id
+            Username: Alphanumeric
+            Creation_time: date_time
+            Name: alphabets
+                                                                                            Email_id: email
+            Institutes: {Id.Institution_id}*
+            Posts: 
+                Conditon:
+                    Post.API_visibility == True
+                {Id.Post_id}*
+            Last_visit: date_time
+            Upvotes: int
+            Profile_photo: Tex_file (#Store and provide link in databse)
+            Bookmarks: {Id.Post_id}*
+                                                                                            Followers: {Id.Account_id}*
+                                                                                            Following: {Id.Account_id}*
+            Comments:
+                Conditon:
+                    Comment.API_visibility == True
+                {Id.Comment_id}*
+                                                                                            Visited_Post: {Id.Post_id}*
+                                                                                            Activity: {Id.Comment_id|Id.Post_id}*
+            tag_list: {Id.Tag_id}*
+            Country: alphanumeric
+                                                                                            State: alphanumeric
+                                                                                            City: alphanumeric
+            Website_address: alphanumeric
+            Github_handle: alphanumeric
+            Organisation: alphanumeric
+                                                                                            Visibility: Bool
+                                                                                            Report_list: {Id.Report_id}*
+                                                                                            API_visibility: Bool
+            Customized:
+                Followers_num = len(Followers)
+                Following_num = len(Following)
+                Report_num = len(Report_list)
+                Email:
+                    Condition:
+                        Email_id.API_visibility = True
+                    {email.username+"@"+email.Domain}
+        Institution:
+            Id: Id.Institution_id
+            Name: Alphanumeric
+            Members:
+                Conditon:
+                    Account.API_visibility == True
+                {Id.Account_id}*
+            Creation_time: date_time
+            Posts:
+                Conditon:
+                    Post.API_visibility == True
+                {Id.Post_id}*
+            Description: Tex_file
+            Domains: {alphanumeric}*
+            Admin: Id.Account_id
+                                                                                            Email_id: email 
+                                                                                            Visibility: Bool
+                                                                                            API_visibility: Bool
+            Customized:
+                Email: Email_id.Username + "@" + Email_id.Domain
+        Tag:
+            Id: Id.Tag_id
+            Tag_Name: alphanumeric
+            Posts:
+                Conditon:
+                    Post.API_visibility == True
+                {Id.Post_id}*
+            Members:
+                Conditon:
+                    Account.API_visibility == True
+                {Id.Account_id}*
+                                                                                            API_visibility: Bool
+        Comment:
+            Id: Id.Comment_id
+            Author: Id.Account_id
+            Time: date_time
+            Content: Tex_file
+                                                                                            Upvotes: {Id.Account_id}*
+            Comment_list: {Id.Comment_id}*
+                                                                                            Comment_Report: {Id.Report_id}*
+                                                                                            Visibility: Bool
+            Post:
+                Conditon:
+                    Post.API_visibility == True
+                {Id.Post_id}
+                                                                                            API_visibility: Bool
+            Customized:
+                Upvote_num = len(Upvotes)
+                Report_num = len(Comment_Report)
+        Id:
+            obj: alphanumeric
+            uniq: alphanumeric
+            
+            SubClasses:
+                Post_id:
+                    obj = P
+                Account_id:
+                    obj = A
+                Institution_id:
+                    obj = I
+                Tag_id:
+                    obj = T
+                Comment_id:
+                    obj = C
+                Report_id:
+                    obj = R
+
+    Methods:
+        Post.get:
+            Arguments: Id.Post_id
+            Returns: Post
+        Account.get:
+            Arguments: Id.Account_id
+            Returns: Account
+        Institution.get:
+            Arguments: Id.Institution_id
+            Returns: Institution
+        Tag.get:
+            Arguments: Id.Tag_id
+            Returns: Tag
+        Comment.get:
+            Arguments: Id.Comment_id
+            Returns: Comment
+        Account_Username.get:
+            Arguments: Username
+            Returns: Account
+        Institution_Name.get:
+            Arguments: Name
+            Returns: Institution
+        Tag_Name.get:
+            Arguments: Name
+            Returns: Tag
+        Post.post:
+            Argument: Post
+            Returns: Id.Post_id
+        Account.post:
+            Argument: Account
+            Returns: Id.Account_id
+        Institution.post:
+            Argument: Institution
+            Returns: Id.Institution_id
+        Tag.post:
+            Argument: Tag
+            Returns: Id.Tag_id
+        Comment.post:
+            Argument: Comment
+            Returns: Id.Comment_id
+        Post.put:
+            Argument: Id.Post_id
+            Returns: None
+        Account.put:
+            Argument: Id.Account_id
+            Returns: None
+        Institution.put:
+            Argument: Id.Institution_id
+            Returns: None
+        Comment.put:
+            Argument: Id.Comment_id
+            Returns: None
+        Post.delete:
+            Argument: Id.Post_id
+            Returns: None
+        Account.delete:
+            Argument: Id.Account_id
+            Returns: None
+        Comment.delete:
+            Argument: Id.Comment_id
+            Returns: None

@@ -1,0 +1,1 @@
+Contains data like images, videos etc.for frontend

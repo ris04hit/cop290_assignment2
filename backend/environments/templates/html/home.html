@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+    <head>
+        <title>home</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/header.css')}}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="{{url_for('header_js')}}"></script>
+        <script src="{{url_for('home_js')}}"></script>
+        <script src="{{url_for('main_js')}}" defer></script>
+    </head>
+    <body  id="body_home">
+        <header-component></header-component>
+        <div id="text_home1">
+            Got Something to share ?
+        </div>
+
+        <button class="button3" id="button_home1">
+            <div id="text_home2" class="text2">
+                Post your own blog
+            </div>
+        </button>
+        <rect id="rect_home1"></rect>
+        <rect id="rect_home2"></rect>
+        <rect id="rect_home3"></rect>
+
+        <div class="multiple_post" id="mul_post_home1">
+
+            <div id="tag_pop_home" class="pop_up">
+                <div class="close_pop">
+                    Close
+                </div>
+                <rect id="rect_tag_home">
+                    <form>
+                        <input type="text" id="search_tag_home" class="form1" placeholder="Search tag">
+                    </form>
+                    <rect id="hr_tag_home"></rect>
+                    <div id="button_tag_home"></div>
+                </rect>
+            </div>
+    
+            <div id="sort_pop_home" class="pop_up">
+                    <rect id="rect_sort_home">
+                        <button id="button_sort_home1" class="button_inv" name="button_sort_home1" type="submit">
+                            <rect id="rect_time_home"></rect>
+                            <div id="text_sort_home1" class="text7">
+                                By Time
+                            </div>
+                        </button>
+                        <button id="button_sort_home2" class="button_inv" name="button_sort_home1" type="submit">
+                            <rect id="rect_up_home"></rect>
+                            <div id="text_sort_home2" class="text7">
+                                By upvotes
+                            </div>
+                        </button>
+                    </rect>
+            </div>
+
+            <div class="outer_post" id="out_post_home1">
+                <form>
+                    <input class="form3" id="inp_home1" placeholder="Search">
+                </form>
+                <button class="form3" id="button_home2">
+                    <div class="text1" id="text_home5">
+                        Add Tag
+                    </div>
+                </button>
+                <button class="form3" id="button_home3">
+                    <div class="text1" id="text_home6">
+                        Sort
+                    </div>
+                </button>
+            </div>
+            {% for post_info in feed %}
+                {% set ct = loop.index %}
+                <div class="outer_post out_post_home2"  id="out_post_home_id-{{ct-1}}">
+                    <rect class="inner_post inner_post_home"></rect>
+
+                    <rect class="profile_bar" id="pbar_home"></rect>
+                    <div class="text1">
+                        <div class="text_home7">
+                            Posted {{post_info[3]}} ago
+                        </div>
+                    </div>
+                    <div class="post_author">
+                        <rect id="rect_home5"></rect>
+                        <a href="{{url_for('profile', username=post_info[4])}}">
+                            <div class="text1">
+                                <div class="text_home8">
+                                    {{post_info[4]}}
+                                </div>
+                            </div>
+                            <rect id="rect_profile_home"></rect>
+                        </a>
+                    </div>
+                    <div class="follow text_home9"></div>
+
+                    <div class="triangle-up" id="del_home1"></div>
+                    <div class="text1" id="text_home10">
+                        <div class="upvote">{{post_info[1]}}</div>
+                    </div>
+                    <rect id="rect_home4"></rect>
+                    <div class="text3 text_home3"></div>
+                    <rect class="cover_content_home">
+                        <div class="text4 text_home4"></div>
+                    </rect>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="multiple_post" id="mul_post_home2">
+            <div class="outer_post" id="out_post_home4">
+                <div id="text_home11" class="text1">
+                    Global Statistics
+                </div>
+            </div>
+
+            <div class="outer_post" id="out_post_home5">
+                <div id="text_home12" class="text5">
+                    Top Contributers (Institution)
+                </div>
+                <ol class="text6" id="list_home1">
+                    <li class="list1">
+                        <a href="{{url_for('institute')}}">
+                            <div class="text6">
+                                Indian Institute Of Technology Delhi
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list1">
+                        <a href="{{url_for('institute')}}">
+                            <div class="text6">
+                                Indian Institute Of Technology Bombay
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list1">
+                        <a href="{{url_for('institute')}}">
+                            <div class="text6">
+                                Indian Institute Of Technology Ropar
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list1">
+                        <a href="{{url_for('institute')}}">
+                            <div class="text6">
+                                Indian Institute Of Technology Kanpur
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list1">
+                        <a href="{{url_for('institute')}}">
+                            <div class="text6">
+                                Indian Institute Of Technology Delhi
+                            </div>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="outer_post" id="out_post_home6">
+                <div id="text_home12" class="text5">
+                    Top Contributers (Individual)
+                </div>
+            </div>
+
+            <div class="outer_post" id="out_post_home7">
+                <div id="text_home12" class="text5">
+                    Most liked posts
+                </div>
+            </div>
+            
+            <div class="outer_post" id="out_post_home8">
+                <div id="text_home12" class="text5">
+                    Most viewed posts
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

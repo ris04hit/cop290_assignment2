@@ -1,0 +1,308 @@
+#body_about{
+    height: 1492px;
+}
+
+#text_about1 {
+    position: absolute;
+    width: 204px;
+    height: 76px;
+    left: 35px;
+    top: 120px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 76px;
+    
+    color: #B6EADA;
+}
+
+#text_about2 {
+    position: absolute;
+    width: 1296px;
+    height: 618px;
+    left: 35px;
+    top: 222px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    
+    color: #FFFFFF;    
+}
+
+#footer_about {
+    position: absolute;
+    width: 1440px;
+    height: 547px;
+    left: 0px;
+    top: 945px;
+    
+    background: rgba(143, 0, 255, 0.75);
+}
+
+#text_about3 {
+    position: absolute;
+    width: 213px;
+    height: 64px;
+    left: 613px;
+    top: 954px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 64px;
+    /* identical to box height */
+    
+    text-decoration-line: underline;
+    
+    color: #FFFFFF;
+}
+
+#line_about1{
+    position: absolute;
+    width: 0px;
+    height: 378px;
+    left: 427px;
+    top: 1114px;
+    
+    border: 1px solid #000000;
+}
+
+#line_about2{
+    position: absolute;
+    width: 0px;
+    height: 378px;
+    left: 901px;
+    top: 1114px;
+    
+    border: 1px solid #000000;
+}
+
+#text_about4 {
+    position: absolute;
+    width: 128px;
+    height: 54px;
+    left: 54px;
+    top: 1053px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 54px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+}
+
+#text_about5 {
+    position: absolute;
+    width: 331px;
+    height: 190px;
+    left: 54px;
+    top: 1120px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 38px;
+    
+    color: #FFFFFF;
+}
+
+#text_about6 {
+    position: absolute;
+    width: 220px;
+    height: 54px;
+    left: 502px;
+    top: 1053px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 54px;
+    /* identical to box height */
+    
+    
+    color: #000000;    
+}
+
+#text_about7 {
+    position: absolute;
+    width: 182px;
+    height: 38px;
+    left: 502px;
+    top: 1120px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 38px;
+    
+    color: #FFFFFF;    
+}
+
+#text_about8 {
+    position: absolute;
+    width: 224px;
+    height: 54px;
+    left: 502px;
+    top: 1225px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 54px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+}
+
+#text_about9 {
+    position: absolute;
+    width: 265px;
+    height: 38px;
+    left: 502px;
+    top: 1292px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 38px;
+    
+    color: #FFFFFF;
+}
+
+#text_about10{
+    position: absolute;
+    width: 201px;
+    height: 54px;
+    left: 958px;
+    top: 1053px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 54px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+}
+
+#text_about11 {
+    position: absolute;
+    width: 95px;
+    height: 45px;
+    left: 1033px;
+    top: 1134px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+}
+
+#text_about12{
+    position: absolute;
+    width: 135px;
+    height: 45px;
+    left: 1033px;
+    top: 1198px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;    
+}
+
+#text_about13 {
+    position: absolute;
+    width: 86px;
+    height: 45px;
+    left: 1033px;
+    top: 1262px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;    
+}
+
+#text_about14 {
+    position: absolute;
+    width: 86px;
+    height: 45px;
+    left: 1033px;
+    top: 1334px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+}
+
+#twit_about {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 958px;
+    top: 1127px;    
+}
+
+#insta_about {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: 956px;
+    top: 1190px;
+}
+
+#reddit_about {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 958px;
+    top: 1258px;
+}
+
+#git_about {
+    position: absolute;
+    width: 83.79px;
+    height: 70px;
+    left: 947px;
+    top: 1323px;
+}

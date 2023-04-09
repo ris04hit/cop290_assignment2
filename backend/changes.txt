@@ -1,0 +1,22 @@
+Login:
+    background blur
+
+Home:
+    tag pop up boundary
+
+About:
+    github transparent bg 
+
+Institute Website in backend is not present so insert it.
+
+In backend Institution table admin_uniq should not be UNI so change it
+account / institution update remove current_timestamp
+checks condition enum
+
+feed -> tags of bookmarks, institution
+
+pass encryption takes time according to Devang so that could be a problem during testing.
+admin created institutes list should be everywhere in frontend, backend.
+login email address check also apart from username (in backend).
+username and password can consist during login space should be implemented.
+username should be checked valid or not while typing in signup page.

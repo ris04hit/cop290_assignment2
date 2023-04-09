@@ -1,0 +1,827 @@
+openapi: 3.0.3
+info:
+  title: Synergy API
+  description: |-
+    A collaborative space for people who want to share their knowledge and resource. Whether need to share in an organization or publically to all or only to friends, Synergy is here. Anybody with need of getting some resources, just search it and surely somebody will be there who has posted the related content for you. This is a swagger documentation which provides API for Synergy website.
+  # termsOfService: http://swagger.io/terms/
+  contact:
+    email: cs1210547@iitd.ac.in
+  # license:
+  #   name: Apache 2.0
+  #   url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: "1.0"
+# externalDocs:
+#   description: Find out more about Swagger
+#   url: http://swagger.io
+# servers:
+#   - url: https://petstore3.swagger.io/api/v3
+tags:
+  - name: Post
+    description: Everything about your Posts
+  - name: Account
+    description: Everything about Accounts
+  - name: Tag
+    description: Everything about Tags
+  - name: Institution
+    description: Everything about your Institution
+  - name: Comment
+    description: Everything about your Comments
+paths:
+  /Post:
+    put:
+      tags:
+        - Post
+      summary: Update an existing Post
+      description: Update an existing Post by Id
+      operationId: updatePost
+      requestBody:
+        description: Update an existent Post
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Post not found
+        '405':
+          description: Validation exception
+    post:
+      tags:
+        - Post
+      summary: Add a new Post to the database
+      description: Add a new Post to the database
+      operationId: addPost
+      requestBody:
+        description: Create a new Post in the database
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'          
+        '405':
+          description: Invalid input
+    delete:
+      tags:
+        - Post
+      summary: Deletes Post from the database
+      description: Deletes Post from the database
+      operationId: deletePost
+      responses:
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Post not found
+  /Post/{Id}:
+    get:
+      tags:
+        - Post
+      summary: Find Post by ID
+      description: For valid response use only the ID structure
+      operationId: getPostById
+      parameters:
+        - name: Id
+          in: path
+          description: Id of Post that needs to be fetched
+          required: true
+          schema:
+            $ref: '#/components/schemas/Id.Post_Id'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Account not found
+  /Account:
+    put:
+      tags:
+        - Account
+      summary: Update an existing Account
+      description: Update an existing Account by Id
+      operationId: updateAccount
+      requestBody:
+        description: Update an existent Account
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Account'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Account not found
+        '405':
+          description: Validation exception
+    post:
+      tags:
+        - Account
+      summary: Add a new Account to the database
+      description: Add a new Account to the database
+      operationId: addAccount
+      requestBody:
+        description: Create a new Account in the database
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Account'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'          
+        '405':
+          description: Invalid input
+    delete:
+      tags:
+        - Account
+      summary: Deletes Account from the database
+      description: Deletes Account from the database
+      operationId: deleteAccount
+      responses:
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Account not found
+  /Account/{Username}:
+    get:
+      tags:
+        - Account
+      summary: Find Account by Username
+      description: Find Account by Username
+      operationId: getAccountByName
+      parameters:
+        - name: Username
+          in: path
+          description: Username of Account that needs to be fetched
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Account not found
+  /Account/{Id}:
+    get:
+      tags:
+        - Account
+      summary: Find Account by ID
+      description: For valid response use only the ID structure
+      operationId: getAccountById
+      parameters:
+        - name: Id
+          in: path
+          description: Id of Account that needs to be fetched
+          required: true
+          schema:
+            $ref: '#/components/schemas/Account'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Account not found
+  /Account/login:
+    get:
+      tags:
+        - Account
+      summary: Logs Account into the system
+      description: ''
+      operationId: loginAccount
+      parameters:
+        - name: Username
+          in: query
+          description: The user name for login
+          required: false
+          schema:
+            type: string
+        - name: Password
+          in: query
+          description: The password for login in clear text
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              schema:
+                type: integer
+                format: int32
+            X-Expires-After:
+              description: date in UTC when token expires
+              schema:
+                type: string
+                format: date-time
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid username/password supplied
+  /Account/logout:
+    get:
+      tags:
+        - Account
+      summary: Logs out current logged in Account session
+      description: ''
+      operationId: logoutAccount
+      parameters: []
+      responses:
+        default:
+          description: successful operation
+  /Institution:
+    put:
+      tags:
+        - Institution
+      summary: Update an existing Institution
+      description: Update an existing Institution by Id
+      operationId: updateInstitution
+      requestBody:
+        description: Update an existent Institution
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Institution'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Institution'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Institution not found
+        '405':
+          description: Validation exception
+    post:
+      tags:
+        - Institution
+      summary: Add a new Institution to the database
+      description: Add a new Institution to the database
+      operationId: addInstitution
+      requestBody:
+        description: Create a new Institution in the database
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Institution'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Institution'          
+        '405':
+          description: Invalid input
+  /Institution/{Id}:
+    get:
+      tags:
+        - Institution
+      summary: Find Institution by ID
+      description: For valid response use only the ID structure
+      operationId: getInstitutionById
+      parameters:
+        - name: Id
+          in: path
+          description: Id of Institution that needs to be fetched
+          required: true
+          schema:
+            $ref: '#/components/schemas/Id.Institution_Id'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Account not found
+  /Institution/{Name}:
+    get:
+      tags:
+        - Institution
+      summary: Find Institution by Name
+      description: Find Institution by Name
+      operationId: getInstitutionByName
+      parameters:
+        - name: Name
+          in: path
+          description: Name of Institution that needs to be fetched
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Institution'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Institution not found
+  /Tag:
+    put:
+      tags:
+        - Tag
+      summary: Update an existing Tag
+      description: Update an existing Tag by Id
+      operationId: updateTag
+      requestBody:
+        description: Update an existent Tag
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Tag not found
+        '405':
+          description: Validation exception
+    post:
+      tags:
+        - Tag
+      summary: Add a new Tag to the database
+      description: Add a new Tag to the database
+      operationId: addTag
+      requestBody:
+        description: Create a new Tag in the database
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'          
+        '405':
+          description: Invalid input
+  /Tag/{Id}:
+    get:
+      tags:
+        - Tag
+      summary: Find Tag by ID
+      description: For valid response use only the ID structure
+      operationId: getTagById
+      parameters:
+        - name: Id
+          in: path
+          description: Id of Tag that needs to be fetched
+          required: true
+          schema:
+            $ref: '#/components/schemas/Id.Tag_Id'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Account not found
+  /Tag/{Name}:
+    get:
+      tags:
+        - Tag
+      summary: Find Tag by Name
+      description: Find Tag by Name
+      operationId: getTagByName
+      parameters:
+        - name: Name
+          in: path
+          description: Name of Tag that needs to be fetched
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Tag not found
+  /Comment:
+    put:
+      tags:
+        - Comment
+      summary: Update an existing Comment
+      description: Update an existing Comment by Id
+      operationId: updateComment
+      requestBody:
+        description: Update an existent Comment
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Comment not found
+        '405':
+          description: Validation exception
+    post:
+      tags:
+        - Comment
+      summary: Add a new Comment to the database
+      description: Add a new Comment to the database
+      operationId: addComment
+      requestBody:
+        description: Create a new Comment in the database
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'          
+        '405':
+          description: Invalid input
+    delete:
+      tags:
+        - Comment
+      summary: Deletes Comment from the database
+      description: Deletes Comment from the database
+      operationId: deleteComment
+      responses:
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Comment not found
+  /Comment/{Id}:
+    get:
+      tags:
+        - Comment
+      summary: Find Comment by ID
+      description: For valid response use only the ID structure
+      operationId: getCommentById
+      parameters:
+        - name: Id
+          in: path
+          description: Id of Comment that needs to be fetched
+          required: true
+          schema:
+            $ref: '#/components/schemas/Id.Comment_Id'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Account not found
+components:
+  schemas:
+    Post:
+      required:
+        - Id
+        - Author
+        - Time
+        - Title
+        - Content
+        - Public_post
+        - Report_num
+        - Upvote_num
+      type: object
+      properties:
+        Id:
+          $ref: '#/components/schemas/Id.Post_Id'
+        Author:
+          $ref: '#/components/schemas/Id.Account_Id'
+        Time:
+          type: string
+          format: date-time
+        Title:
+          type: string
+        Content:
+          type: string
+        Comment:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Comment_Id'
+        Public_post:
+          type: boolean
+        Institutes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Institution_Id'
+        tag_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Tag_Id'
+        Report_num:
+          type: integer
+        Upvote_num:
+          type: integer
+    Account:
+      type: object
+      required:
+        - Id
+        - Username
+        - Creation_time
+        - Name
+        - Last_visit
+        - Upvotes
+        - Followers_num
+        - Following_num
+        - Report_num
+      properties:
+        Id:
+          $ref: '#/components/schemas/Id.Account_Id'
+        Username:
+          type: string
+        Creation_time:
+          type: string
+          format: date-time
+        Name:
+          type: string
+        Institutes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Institution_Id'
+        Posts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Post_Id'
+        Last_visit:
+          type: string
+          format: date-time
+        Upvotes:
+          type: integer
+        Profile_photo:
+          type: string
+        Bookmarks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Post_Id'
+        Comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Comment_Id'
+        tag_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Tag_Id'
+        Country:
+          type: string
+        Website_address:
+          type: string
+        Github_handle:
+          type: string
+        Organisation:
+          type: string
+        Followers_num:
+          type: integer
+        Following_num:
+          type: integer
+        Report_num:
+          type: integer
+        Email:
+          type: string
+    Institution:
+      type: object
+      required:
+        - Id
+        - Name
+        - Members
+        - Creation_time
+        - Description
+        - Admin
+        - Email
+      properties:
+        Id:
+          $ref: '#/components/schemas/Id.Institution_Id'
+        Name:
+          type: string
+        Members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Account_Id'
+        Creation_time:
+          type: string
+          format: date-time
+        Posts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Post_Id'
+        Description:
+          type: string
+        Domains:
+          type: array
+          items:
+            type: string
+        Admin:
+          $ref: '#/components/schemas/Id.Account_Id'
+        Email:
+          type: string
+    Tag:
+      type: object
+      required:
+        - Id
+        - Tag_name
+        - Posts
+      properties:
+        Id:
+          $ref: '#/components/schemas/Id.Tag_Id'
+        Tag_name:
+          type: string
+        Posts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Post_Id'
+        Members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Account_Id'
+    Comment:
+      type: object
+      required:
+        - Id
+        - Author
+        - Time
+        - Content
+        - Post
+        - Upvote_num
+        - Report_num
+      properties:
+        Id:
+          $ref: '#/components/schemas/Id.Comment_Id'
+        Author:
+          $ref: '#/components/schemas/Id.Account_Id'
+        Time:
+          type: string
+          format: date-time
+        Content:
+          type: string
+        Comment_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Comment_Id'
+        Posts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Id.Post_Id'
+        Upvote_num:
+          type: integer
+        Report_num:
+          type: integer
+    Id:
+      type: object
+      required:
+        - obj
+        - uniq
+      properties:
+        obj:
+          type: string
+          enum: ["A","I","T","C","P"]
+        uniq:
+          type: string
+    Id.Account_Id:
+      type: object
+      required:
+        - obj
+        - uniq
+      properties:
+        obj:
+          type: string
+          enum: ["A"]
+        uniq:
+          type: string
+    Id.Institution_Id:
+      type: object
+      required:
+        - obj
+        - uniq
+      properties:
+        obj:
+          type: string
+          enum: ["I"]
+        uniq:
+          type: string
+    Id.Tag_Id:
+      type: object
+      required:
+        - obj
+        - uniq
+      properties:
+        obj:
+          type: string
+          enum: ["T"]
+        uniq:
+          type: string
+    Id.Comment_Id:
+      type: object
+      required:
+        - obj
+        - uniq
+      properties:
+        obj:
+          type: string
+          enum: ["C"]
+        uniq:
+          type: string
+    Id.Post_Id:
+      type: object
+      required:
+        - obj
+        - uniq
+      properties:
+        obj:
+          type: string
+          enum: ["P"]
+        uniq:
+          type: string
+  securitySchemes:
+    app_id:
+      type: apiKey
+      description: API key to authorize requests
+      name: appid
+      in: query
+security:
+  - app_id: []

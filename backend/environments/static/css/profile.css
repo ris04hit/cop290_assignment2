@@ -1,0 +1,243 @@
+#body_profile {
+    height: 2953px;
+}
+
+#pfp_profile {
+    position: absolute;
+    width: 175px;
+    height: 175px;
+    left: 118px;
+    top: 148px;
+    border-radius: 87.5px;
+
+    background: #D9D9D9;
+}
+
+#name_profile {
+    position: absolute;
+    width: 1033px;
+    height: 74px;
+    left: 362px;
+    top: 148px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 76px;
+    
+    color: #B6EADA;
+}
+
+#follow_profile {
+    position: absolute;
+    width: 75px;
+    height: 38px;
+    left: 562px;
+    top: 156px;
+    
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 38px;
+    
+    color: #008DFF;    
+}
+
+#member_profile {
+    width: 204px;
+    height: 25px;
+    left: 362px;
+    top: 249px;    
+}
+
+#last_profile{
+    width: 181px;
+    height: 25px;
+    left: 362px;
+    top: 274px;
+}
+
+#upvote_profile{
+    width: 108px;
+    height: 25px;
+    left: 362px;
+    top: 299px;
+}
+
+#email_profile{
+    width: 268px;
+    height: 25px;
+    left: 850px;
+    top: 249px;
+}
+
+#org_profile{
+    width: 268px;
+    height: 25px;
+    left: 850px;
+    top: 274px;
+}
+
+#web_profile{
+    width: 233px;
+    height: 25px;
+    left: 850px;
+    top: 299px;
+    
+}
+
+#rect_profile1 {
+    position: absolute;
+    width: 0px;
+    height: 229px;
+    left: 117px;
+    top: 440px;
+    
+    border: 3px solid #B6EADA;
+}
+
+#history_profile {
+    width: 60px;
+    height: 28px;
+    left: 152px;
+    top: 436px;
+}
+
+#setting_profile {
+    width: 72px;
+    height: 28px;
+    left: 151px;
+    top: 476px;
+}
+
+#bookmark_profile {
+    width: 94px;
+    height: 28px;
+    left: 150px;
+    top: 516px;
+}
+
+#insti_profile {
+    width: 98px;
+    height: 28px;
+    left: 150px;
+    top: 556px;
+}
+
+#following_profile {
+    width: 80px;
+    height: 28px;
+    left: 150px;
+    top: 596px;
+}
+
+#follower_profile {
+    width: 82px;
+    height: 28px;
+    left: 149px;
+    top: 636px;
+}
+
+#interest_rect_profile {
+    width: 278px;
+    height: 529px;
+    left: 1085px;
+    top: 714px;
+}
+
+#interest_text_profile {
+    width: 88px;
+    height: 32px;
+    left: 97px;
+    top: 4px;
+}
+
+#button_profile1 {
+    width: 160px;
+    height: 43px;
+    left: 65px;
+    top: 58px;
+}
+
+#button_profile2 {
+    width: 160px;
+    height: 43px;
+    left: 65px;
+    top: 116px;
+}
+
+#button_profile3 {
+    width: 160px;
+    height: 43px;
+    left: 65px;
+    top: 174px;
+}
+
+#button_profile4 {
+    width: 160px;
+    height: 43px;
+    left: 65px;
+    top: 232px;
+}
+
+#button_profile5 {
+    width: 160px;
+    height: 43px;
+    left: 65px;
+    top: 290px;
+}
+
+#button_profile6 {
+    width: 160px;
+    height: 43px;
+    left: 65px;
+    top: 348px;
+}
+
+#button_profile7 {
+    width: 160px;
+    height: 43px;
+    left: 65px;
+    top: 406px;
+}
+
+.rect_option_profile {
+    position: absolute;
+    width: 117px;
+    height: 25px;
+    left: 137px;
+    
+    background: #03001C;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#option_profile .text8 {
+    cursor: pointer;
+}
+
+#rect_option_profile1 {
+    top: 436px;
+}
+
+#rect_option_profile2 {
+    top: 476px;
+}
+
+#rect_option_profile3 {
+    top: 516px;
+}
+
+#rect_option_profile4 {
+    top: 556px;
+}
+
+#rect_option_profile5 {
+    top: 596px;
+}
+
+#rect_option_profile6 {
+    top: 636px;
+}

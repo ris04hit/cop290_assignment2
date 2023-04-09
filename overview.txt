@@ -1,0 +1,61 @@
+Website Name: Synergy
+
+Team Name:
+Aman Dalawat
+Devang Garg
+Mani Sarthak
+Rishit Singla
+
+Motto:
+A collaborative space for people who want to share their knowledge and resources. Whether need to share in an organization or publically to all or only to friends, ___ is here. Anybody with need of getting some resources, just search it and surely somebody will be there who has posted the related content for you.
+
+
+Problem Statement:
+Often, individuals and organizations who wish to share their resources struggle to find an organized platform to do so. To facilitate this sharing of information, a collaborative space is necessary, where diverse parties can come together and contribute. Unfortunately, searching for resources on the internet can be challenging due to the presence of misleading or irrelevant information.
+
+Solution:
+
+Features:
+1) Login page with username and password and details database. - signup/signin/pop up detail page
+2) A page regarding user details - to fill details/ profile photo/ institutional login/ bookmarks list/ institutional admin/ search instution based on address
+3) Facility to post out content - public;private/ type of files- pdf, text, links, video, images, etc.../ uses latex/ allows edit and restoring the edits/ tags
+4) Reaction on other post - upvote/ comment (content allowed is text and links)/ uses latex/ download
+5) Interacting with other users - invite users in org/ view other profile/ follow/ cant open other images in zoom/ allows bookmarks on posts; comment
+6) Statistics - users statistics/ contributor/ relevancy/ upvoted/ active for how many days/ individual & global/ activity monitor
+7) Search - sorting algorithm/ search by tag
+8) Feed - prefering followed and high vote with interests in profile page and searches
+9) History - Activity history of commenting, posting etc. with real time tracking
+
+********************
+
+Theme:
+
+Blogging site, Collaborative space. One can put up there resources - text, images, videos, code file, pdf, links. Others can access.
+
+Features:
+
+1) post
+2) comments (nested)
+3) upvote downvote
+4) follow
+5) account
+6) sign in
+7) activity view
+8) search 
+9) Time of post manage
+10) Attractive protective
+11) block
+12) History
+13) Follower
+14) Private
+15) Save resources/ Bookmark
+16) Only one time upvote.
+17) feature
+18) edit
+19) Download
+Additional Features:
+
+1) *dm
+2) *community admin
+3) *status
+4) *organization register for collaborative space
